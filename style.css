@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root{
+    /* ### Primary */
+
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);  
+
+  /* ### Neutral */
+
+
+  /* ### Gradients */
+
+/* Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) */ 
+/*  Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+
+     /* ### font */
+
+     --ff:'Josefin Sans', sans-serif;
+     --fw-300:300;
+     --fw-400:400;
+     --fw-600:600;
+
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+}
+
+body{
+    font-family: var(--ff);
+    font-size: 16px;
+  
+}
+.main-container{
+    min-height: 100vh;
+    display: flex; 
+
+}
+.content-section{
+    width: 60%;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.detail-section{
+  max-width: 60%;
+  margin: auto;
+  margin-top: 4rem;
+ 
+}
+.hero-banner-mobile{
+  display: none;
+}
+.detail-info{
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  flex-direction: column;
+
+}
+
+.detail-title{
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 16px;
+  color:var(--Dark-Grayish-Red);
+}
+.detail-title span{
+  font-weight: var(--fw-300);
+  color: var(--Desaturated-Red);
+}
+.detail-text{
+  width: 80%;
+  margin-top: 1.8rem;
+  line-height: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--Desaturated-Red);
+ 
+
+}
+.hero-banner-desktop{
+    width: 40%;
+    background-image: url(./images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+form{
+  margin-top: 2rem;
+  width: 100%;
+  position: relative;
+}
+.input-container {
+  width: 100%;
+  display: flex;
+}
+#email{
+  border: 2px solid var(--Desaturated-Red);
+  border-radius: 50px;
+  background: transparent;
+  padding: 1.2em 2rem;
+  margin-left: 0.2em;
+  height: 65px;
+  width: 100%;
+
+}
+#email:focus{
+  outline: var(--Desaturated-Red);
+}
+.alert-button{
+  background: var(--Soft-Red);
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  top: 20px;
+  right: 39%; 
+  transition: all 300ms ease-in;
+  opacity: 0;
+
+}
+.alert-text{
+  font-size: 15px;
+  font-weight: var(--fw-600);
+  color: var(--Desaturated-Red);
+  padding: 0.8em 2rem;
+  transition: all 300ms ease-in;
+  opacity: 0;
+} 
+button{
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  height: 65px;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  width: 154px;
+  transform: translate(-48%, 0);
+  -webkit-box-shadow: 6px 15px 48px -6px rgba(0,0,0,0.35);
+-moz-box-shadow: 6px 15px 48px -6px rgba(0,0,0,0.35);
+box-shadow: 6px 15px 48px -6px rgba(0,0,0,0.35);
+
+}
+
+
+button:hover{
+  cursor: pointer;
+  background:hsl(0, 80%, 86%) ;
+  -webkit-box-shadow: 6px 15px 48px -6px rgba(0,0,0,0.55);
+-moz-box-shadow: 6px 15px 48px -6px rgba(0,0,0,0.55);
+box-shadow: 6px 15px 48px -6px rgba(0,0,0,0.55);
+
+
+}
+input::placeholder{
+  color: var(--Desaturated-Red);
+  font-weight: 700;
+
+  
+}
+@media screen and (max-width:1004px){
+  .hero-banner-desktop{
+    display: none;
+    
+  }
+  .detail-section{
+    max-width: 90%;
+  }
+  .content-section{
+     width: 100%;
+  
+  }
+  .detail-text{
+    width: 100%;
+  }
+  .input-container{
+    padding-left: 1rem;
+   
+  }
+  #email{
+    width: 100%;
+  }
+}
+
+
+
+@media screen and (max-width:578px){
+  body{
+    background: none;
+    max-width: 100%;
+  }
+  .hero-banner-desktop{
+    display: none;
+  }
+  .hero-banner-mobile{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .content-section{
+    width: 100%;
+  }
+  .detail-section{
+    max-width: 100%;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+   
+  }
+  .detail-info{
+    min-height: 50vh;
+  }
+  .detail-title{
+    font-size: 2.9rem;
+    letter-spacing: 4px;
+  }
+  .detail-text{
+   width: 90%;
+   margin: auto;
+   margin-top: 10px;
+   line-height: 1.6;
+   font-size: 15px;
+  }
+  .detail-sub-section{
+    margin-top: 2rem;
+  }
+  .header-logo{
+    margin-left: -180px;
+  }
+  #email{
+    height: 50px;
+  }
+  button{
+    height: 50px; 
+    width: 80px;
+    transform: translate(-90%, -1px);
+    
+  }
+  
+
+}
